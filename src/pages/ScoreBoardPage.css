@@ -1,0 +1,136 @@
+.scoreboard-page {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.scoreboard-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+
+.team-section {
+  flex: 1;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.team-header {
+  margin-bottom: 2rem;
+}
+
+.team-name-input {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.team-name-input:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: white;
+}
+
+.score-display {
+  font-size: 6rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 2rem 0;
+  line-height: 1;
+}
+
+.score-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.score-button {
+  width: 80px;
+  height: 80px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.score-button.increment {
+  background-color: #27ae60;
+}
+
+.score-button.increment:hover {
+  background-color: #229954;
+  transform: scale(1.1);
+}
+
+.score-button.decrement {
+  background-color: #e74c3c;
+}
+
+.score-button.decrement:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
+
+.score-button:active {
+  transform: scale(0.95);
+}
+
+.vs-divider {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #95a5a6;
+  padding: 2rem;
+}
+
+.reset-button {
+  display: block;
+  margin: 3rem auto 0;
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reset-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .scoreboard-content {
+    flex-direction: column;
+  }
+
+  .vs-divider {
+    transform: rotate(90deg);
+  }
+}
