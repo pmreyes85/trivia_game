@@ -15,16 +15,17 @@ export const questions = {
       answer: 'Agham' 
     },
     { id: 2, 
-      question: 'Ano sa tagalog ang "Owl"?', 
-      answer: 'Kwago' 
+      question: 'Ano sa tagalog ito?', 
+      answer: 'Kwago',
+      image: process.env.PUBLIC_URL + '/images/owl.webp'
     },
-    { id: 3, question: 'Ano sa tagalog ang "Jellyfish"?', answer: 'Dikya' },
+    { id: 3, question: 'Ano sa tagalog ito?', answer: 'Dikya', image: process.env.PUBLIC_URL + '/images/jellyfish.jpg' },
     { id: 4, question: 'Ano sa tagalog ang "Environment"?', answer: 'Kapaligiran' },
     { id: 5, question: 'Ano sa tagalog ang "Shell"?', answer: 'Kabibe' },
-    { id: 6, question: 'Ano sa tagalog ang "Duck"?', answer: 'Pato' },
+    { id: 6, question: 'Ano sa tagalog ang hayop na kumagat sa superhero na ito?', answer: 'Gagamba', image: process.env.PUBLIC_URL + '/images/spiderman.jpg' },
     { id: 7, question: 'Ano sa tagalog ang "Jackfruit"?', answer: 'Lanka' },
     { id: 8, question: 'Ano sa tagalog ang "Bitter Gourd"?', answer: 'Ampalaya' },
-    { id: 9, question: 'Ano sa tagalog ang "Radish"?', answer: 'Labanos' },
+    { id: 9, question: 'Ano sa tagalog ito?', answer: 'Labanos', image: process.env.PUBLIC_URL + '/images/labanos.jpg' },
     { id: 10, question: 'Ano sa tagalog ang "String Beans"?', answer: 'Sitaw' }
   ],
 
@@ -43,41 +44,41 @@ export const questions = {
 
   "heograpiya": [
     { id: 1, question: 'Ano ang pinakamataas na bundok sa Pilipinas?', answer: 'Apo' },
-    { id: 2, question: 'Ano ang lungsod na malapit dito?', answer: 'Legazpi, Albay', image: '/images/mayon.jpg'},
-    { id: 3, question: 'Ano ang kabisera ng Palawan?', answer: 'Puerto Princesa' },
-    { id: 4, question: 'Ano ang kabisera ng Negros Occidental?', answer: 'Bacolod' },
+    { id: 2, question: 'Ano ang lungsod na malapit dito?', answer: 'Legazpi', image: process.env.PUBLIC_URL + '/images/mayon.jpg'},
+    { id: 3, question: 'Ano ang kabisera ng probinsyang ito?', answer: 'Puerto Princesa', image: process.env.PUBLIC_URL + '/images/palawan.png' },
+    { id: 4, question: 'Ano ang kabisera ng Negros Occidental?', answer: 'Bacolod', image: process.env.PUBLIC_URL + '/images/negros_occidental.png' },
     { id: 5, question: 'Saan ipinanganak si Jose Rizal?', answer: 'Calamba, Laguna' },
     { id: 6, question: 'Ilang pulo ang bumubuo sa Pilipinas?', answer: '7,107 o 7,641' },
-    { id: 7, question: 'Ano ang tawag na hagdang-hagdang palayan sa Ifugao na kinikilala bilang UNESCO World Heritage Site?', answer: 'Banaue Rice Terraces' },
-    { id: 8, question: 'Saan ito makikita?', answer: 'Chocolate Hills, Bohol', image: '/images/choco.jpeg'},
-    { id: 9, question: 'Aling pangkat ng mga isla sa pinakahilagang bahagi ng bansa ang kilala sa mga bahay na bato at malalakas na bagyo?', answer: 'Batanes' },
+    { id: 7, question: 'Ano ang tawag na hagdang-hagdang palayan sa Ifugao na kinikilala bilang UNESCO World Heritage Site?', answer: 'Banaue Rice Terraces', image: process.env.PUBLIC_URL + '/images/banaue.jpeg' },
+    { id: 8, question: 'Saan ito makikita?', answer: 'Chocolate Hills, Bohol', image: process.env.PUBLIC_URL + '/images/choco.jpeg'},
+    { id: 9, question: 'Aling pangkat ng mga isla sa pinakahilagang bahagi ng bansa ang kilala sa mga bahay na bato at malalakas na bagyo?', answer: 'Batanes', image: process.env.PUBLIC_URL + '/images/batanes.jpg' },
     { id: 10, question: 'Ano ang sikat na isla ang may pinong puting buhangin na matatagpuan sa lalawigan ng Aklan?', answer: 'Boracay' }
   ],
 
   "pop_culture": [
-    { id: 1, question: 'Sino ang unang Pilipinong nanalo sa Miss Universe?', answer: 'Gloria Diaz (1969)' },
-    { id: 2, question: 'Sino ang asawa ni Manny Pacquiao?', answer: 'Jinkee Pacquiao' },
+    { id: 1, question: 'Sino ang unang Pilipinong nanalo sa Miss Universe?', answer: 'Gloria Diaz (1969)', image: process.env.PUBLIC_URL + '/images/gloria.jpg' },
+    { id: 2, question: 'Sino ang asawa nito?', answer: 'Jinkee Pacquiao', image: process.env.PUBLIC_URL + '/images/manny.jpg'},
     { id: 3, question: 'Ano ang ibig sabihin ng DPWH?', answer: 'Department of Public Works and Highways' },
-    { id: 4, question: 'Anong sikat na boy band ang nabuo mula sa palabas na Pinoy Pop Superstar?', answer: 'SB19' },
+    { id: 4, question: 'Anong sikat na boy band ang nabuo mula sa palabas na Pinoy Pop Superstar?', answer: 'SB19', image: process.env.PUBLIC_URL + '/images/sb19.jpg' },
     { id: 5, question: 'Ano ang pinakamatagal nang tumatakbong noontime show sa Pilipinas?', answer: 'Eat Bulaga!' },
     { id: 6, question: 'Saang bansa kasalukuyang nakakulong ang dating pangulong Rodrigo Duterte?', answer: 'Netherlands' },
     { id: 7, question: 'Ano ang pangalan ng computer virus na kumalat sa pamamagitan ng email na ginawa ng isang estudyante mula sa Maynila noong taong 2000?', answer: 'I Love You Virus' },
     { id: 8, question: 'Sino ang gumanap bilang Cardo Dalisay sa FPJ’s Ang Probinsyano?', answer: 'Coco Martin' },
-    { id: 9, question: 'Anong sikat na palabas sa telebisyon noong 90s ang kilala sa kanilang Halloween special episode na nagpapakita ng mga reenactment ng kababalaghan at mga multo sa iba’t ibang bahagi ng bansa? Ang host nito ay si Noli de Castro.', answer: 'Magandang Gabi, Bayan' },
+    { id: 9, question: 'Anong sikat na palabas sa telebisyon noong 90s ang kilala sa kanilang Halloween special episode na nagpapakita ng mga reenactment ng kababalaghan at mga multo sa iba’t ibang bahagi ng bansa? Ang host nito ay si Noli de Castro.', answer: 'Magandang Gabi... Bayan', image: process.env.PUBLIC_URL + '/images/noli.avif' },
     { id: 10, question: 'Sino ang unang nanalo ng gintong medalya para sa Pilipinas sa mga Palarong Olimpiko?', answer: 'Hidilyn Diaz' }
   ],
 
   "tradisyon_pamahiin": [
     { id: 1, question: 'Ano ang bersyong Pilipino ng bampira na sumisipsip ng dugo gamit ang mahaba nitong dila?', answer: 'Aswang' },
     { id: 2, question: 'Ano ang sinasabi ng mga Pilipino kapag dadaan sa lugar na pinaniniwalaang tinitirhan ng mga dwende?', answer: 'Tabi tabi po' },
-    { id: 3, question: 'Maliban sa daliri, anong bahagi ng katawan ang madalas gamitin ng mga Pilipino sa pagtuturo ng isang bagay?', answer: 'Bibig' },
-    { id: 4, question: 'Ano ang kaugalian ng mga Pilipino bilang pagpapakita ng paggalang sa nakatatanda sa pamamagitan ng pagdampi ng kamay sa noo?', answer: 'Mano po' },
-    { id: 5, question: 'Ano ang tawag sa tradisyunal na panliligaw kung saan ang lalaki ay kumakanta sa labas ng bahay ng babae?', answer: 'Harana' },
+    { id: 3, question: 'Maliban sa daliri, anong bahagi ng katawan ang madalas gamitin ng mga Pilipino sa pagtuturo ng isang bagay?', answer: 'Bibig o Nguso' },
+    { id: 4, question: 'Ano ang kaugalian ng mga Pilipino bilang pagpapakita ng paggalang sa nakatatanda sa pamamagitan ng pagdampi ng kamay sa noo?', answer: 'Mano po', image: process.env.PUBLIC_URL + '/images/manopo.jpg' },
+    { id: 5, question: 'Ano ang tawag sa tradisyunal na panliligaw kung saan ang lalaki ay kumakanta sa labas ng bahay ng babae?', answer: 'Harana', image: process.env.PUBLIC_URL + '/images/harana.webp' },
     { id: 6, question: 'Ano ang pamahiin kapag nalaglag ang kubyertos habang kumakain?', answer: 'May darating na bisita' },
-    { id: 7, question: 'Ano ang tradisyunal na sayaw ng mga Pilipino na gumagamit ng mga kawayan?', answer: 'Tinikling' },
+    { id: 7, question: 'Ano ang tradisyunal na sayaw ng mga Pilipino na gumagamit ng mga kawayan?', answer: 'Tinikling', image: process.env.PUBLIC_URL + '/images/tinikling.jpg' },
     { id: 8, question: 'Ano ang pamahiin kapag umuulan habang maliwanag ang araw?', answer: 'May kinakasal na tikbalang' },
-    { id: 9, question: 'Ano ang taunang tradisyong Pilipino sa Quiapo, Maynila kung saan milyun-milyong deboto ang nakikilahok sa prusisyon bilang pagpapakita ng pananampalataya?', answer: 'Pista ng Itim na Nazareno (Black Nazarene)' },
-    { id: 10, question: 'Anong pista sa Baguio City ang ipinagdiriwang upang ipakita ang ganda ng mga bulaklak?', answer: 'Panagbenga Festival' }
+    { id: 9, question: 'Ano ang taunang tradisyong Pilipino sa Quiapo, Maynila kung saan milyun-milyong deboto ang nakikilahok sa prusisyon bilang pagpapakita ng pananampalataya?', answer: 'Pista ng Itim na Nazareno (Black Nazarene) o Translacion', image: process.env.PUBLIC_URL + '/images/black_nazarene.jpg' },
+    { id: 10, question: 'Anong pista sa Baguio City ang ipinagdiriwang upang ipakita ang ganda ng mga bulaklak?', answer: 'Panagbenga Festival', image: process.env.PUBLIC_URL + '/images/panagbenga.png' }
   ]
 };
 

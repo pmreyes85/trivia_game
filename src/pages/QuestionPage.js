@@ -14,11 +14,15 @@ function QuestionPage() {
   const category = categories.find(cat => cat.id === categoryId);
   const categoryQuestions = questions[categoryId] || [];
   const question = categoryQuestions.find(q => q.id === parseInt(questionId));
+  const totalQuestions = categoryQuestions.length;
+  const currentIndex = categoryQuestions.findIndex(q => q.id === parseInt(questionId));
 
   useEffect(() => {
     // Load answered state from localStorage
     const answered = isQuestionAnswered(categoryId, parseInt(questionId));
     setIsAnswered(answered);
+    // Always hide the answer when a new question is displayed
+    setShowAnswer(false);
   }, [categoryId, questionId]);
 
   const handleToggleAnswer = () => {
@@ -29,6 +33,22 @@ function QuestionPage() {
     const checked = e.target.checked;
     setIsAnswered(checked);
     markQuestionAnswered(categoryId, parseInt(questionId), checked);
+  };
+
+  const goToQuestionByIndex = (index) => {
+    if (!categoryQuestions.length) return;
+    const clampedIndex = ((index % totalQuestions) + totalQuestions) % totalQuestions;
+    const nextId = categoryQuestions[clampedIndex].id;
+    navigate(`/category/${categoryId}/question/${nextId}`);
+    window.scrollTo(0, 0);
+  };
+
+  const handleNext = () => {
+    goToQuestionByIndex(currentIndex + 1);
+  };
+
+  const handlePrev = () => {
+    goToQuestionByIndex(currentIndex - 1);
   };
 
   if (!category || !question) {
@@ -91,6 +111,11 @@ function QuestionPage() {
             />
             <span className="checkbox-text">Mark as Answered</span>
           </label>
+        </div>
+
+        <div className="nav-buttons">
+          <button className="nav-button prev" onClick={handlePrev}>&lt;</button>
+          <button className="nav-button next" onClick={handleNext}>&gt;</button>
         </div>
 
         <button 
