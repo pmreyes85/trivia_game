@@ -59,7 +59,7 @@ export const questions = {
     { id: 1, question: 'Sino ang unang Pilipinong nanalo sa Miss Universe?', answer: 'Gloria Diaz (1969)', image: process.env.PUBLIC_URL + '/images/gloria.jpg' },
     { id: 2, question: 'Sino ang asawa nito?', answer: 'Jinkee Pacquiao', image: process.env.PUBLIC_URL + '/images/manny.jpg'},
     { id: 3, question: 'Ano ang ibig sabihin ng DPWH?', answer: 'Department of Public Works and Highways' },
-    { id: 4, question: 'Sa filipino gay lingo, ano ang ibig sabihin ng "Chaka"?', answer: 'Panget o cheap' },
+    { id: 4, question: 'Ano ang tawag sa street food na ito?', answer: 'Betamax', image: process.env.PUBLIC_URL + '/images/betamax.jpg' },
     { id: 5, question: 'Ano ang pinakamatagal nang tumatakbong noontime show sa Pilipinas?', answer: 'Eat Bulaga!' },
     { id: 6, question: 'Saang bansa kasalukuyang nakakulong ang dating pangulong Rodrigo Duterte?', answer: 'Netherlands' },
     { id: 7, question: 'Ano ang pangalan ng computer virus na kumalat sa pamamagitan ng email na ginawa ng isang estudyante mula sa Maynila noong taong 2000?', answer: 'I Love You Virus' },
