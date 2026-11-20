@@ -1,0 +1,136 @@
+.settings-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4vh 8vw;
+  gap: 4vh;
+}
+
+.settings-grid {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3vh 2vw;
+}
+
+.settings-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5vh;
+  padding: 3vh 3vw;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.settings-label {
+  font-weight: 700;
+  font-size: clamp(1rem, 2.3vh, 1.5rem);
+  color: var(--text-dim);
+}
+
+.settings-input {
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vh, 2.6rem);
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.45em 0.6em;
+  outline: none;
+}
+
+.settings-input:focus {
+  border-color: var(--text-dim);
+}
+
+/* Team name cards in their team color */
+.settings-card.team-a {
+  border: 2px solid var(--team-1);
+  background: var(--team-1-soft);
+}
+.settings-card.team-a .settings-label,
+.settings-card.team-a .settings-input {
+  color: var(--team-1);
+}
+.settings-card.team-a .settings-input:focus {
+  border-color: var(--team-1);
+}
+
+.settings-card.team-b {
+  border: 2px solid var(--team-2);
+  background: var(--team-2-soft);
+}
+.settings-card.team-b .settings-label,
+.settings-card.team-b .settings-input {
+  color: var(--team-2);
+}
+.settings-card.team-b .settings-input:focus {
+  border-color: var(--team-2);
+}
+
+.timer-stepper {
+  display: flex;
+  align-items: center;
+  gap: 1.2vw;
+}
+
+.timer-input {
+  width: 6.5ch;
+  font-size: clamp(2rem, 5.5vh, 3.6rem);
+  padding: 0.25em 0.3em;
+}
+
+.step-button {
+  width: clamp(60px, 8vh, 88px);
+  height: clamp(60px, 8vh, 88px);
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.4vh, 1.5rem);
+  cursor: pointer;
+}
+
+.step-button:hover {
+  border-color: var(--text-dim);
+}
+
+.settings-hint {
+  color: var(--text-dim);
+  font-size: clamp(0.9rem, 1.8vh, 1.1rem);
+  text-align: center;
+}
+
+.reset-button {
+  min-width: 14vw;
+  border: 1px solid var(--danger);
+  background: transparent;
+  color: var(--danger);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.5vh, 1.5rem);
+  padding: 0.7em 2.4em;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.settings-footer {
+  color: var(--text-dim);
+  font-size: clamp(0.9rem, 1.8vh, 1.1rem);
+}

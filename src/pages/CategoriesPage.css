@@ -1,43 +1,88 @@
-.categories-page {
-  padding: 3rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.page-title {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 3rem;
-  color: #2c3e50;
-  font-weight: 700;
-}
-
-.categories-grid {
+.board {
+  height: 100%;
+  padding: 2vh 2vw 2.5vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
+  grid-template-columns: repeat(var(--cols, 5), minmax(0, 1fr));
+  grid-template-rows: auto repeat(var(--rows, 10), minmax(0, 1fr));
+  gap: 0.8vh 0.9vw;
 }
 
-.category-button {
-  padding: 3rem 2rem;
-  font-size: 2rem;
-  font-weight: 700;
-  color: white;
-  border: none;
-  border-radius: 12px;
+.board-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.1vh 0.8vw;
+  margin-bottom: 0.6vh;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--c);
+  font-weight: 800;
+  font-size: clamp(1rem, 2.3vh, 1.5rem);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.board-category-icon {
+  font-size: 1.25em;
+}
+
+.board-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid color-mix(in srgb, var(--c) 70%, transparent);
+  background: var(--surface);
+  color: var(--text);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  transition: background-color 0.15s ease, filter 0.15s ease;
 }
 
-.category-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+.board-card:hover {
+  background: var(--surface-2);
 }
 
-.category-button:active {
-  transform: translateY(-2px);
+.board-points {
+  font-size: clamp(1.4rem, 3.9vh, 2.6rem);
+  line-height: 1;
+}
+
+/* Won by a team: solid team color, no label needed */
+.board-card.won-1 {
+  background: var(--team-1);
+  border-color: var(--team-1);
+  color: #fff;
+}
+
+.board-card.won-2 {
+  background: var(--team-2);
+  border-color: var(--team-2);
+  color: #fff;
+}
+
+.board-card.won-1:hover,
+.board-card.won-2:hover {
+  filter: brightness(1.1);
+}
+
+/* Answered but nobody got it */
+.board-card.nobody {
+  background: transparent;
+  border-color: var(--border);
+}
+
+.board-card.nobody .board-points {
+  color: var(--text-dim);
+  opacity: 0.45;
+}
+
+.board-nobody {
+  position: absolute;
+  right: 0.8vw;
+  font-weight: 700;
+  font-size: clamp(0.8rem, 1.6vh, 1.05rem);
+  color: var(--text-dim);
 }

@@ -1,84 +1,83 @@
-// Static trivia categories and questions
+// Static trivia categories and questions.
+// A category's icon is an emoji (`icon`) or a picture (`iconImage`).
 export const categories = [
-  { id: 'ano_sa_tagalog_ang', name: 'Ano sa Tagalog ang...', color: '#e74c3c' },
-  { id: 'kasaysayan', name: 'Kasaysayan', color: '#3498db' },
-  { id: 'pop_culture', name: 'Pop Culture', color: '#9b59b6' },
-  { id: 'tradisyon_pamahiin', name: 'Tradisyon at Pamahiin', color: '#2ecc71' },
-  { id: 'heograpiya', name: 'Heograpiya', color: '#f39c12' }
+  { id: '1', name: 'Star Wars', color: '#ffc53d', icon: '🌌' },
+  { id: '2', name: 'Christmas Movies & Songs', color: '#30a46c', icon: '🎄' },
+  { id: '3', name: 'Filipino Christmas', color: '#8e4ec6', icon: '🇵🇭' },
+  { id: '4', name: 'Pinoy Pop Culture', color: '#f76b15', icon: '🎤' },
+  { id: '5', name: 'Courtesy Point', color: '#12a594', iconImage: process.env.PUBLIC_URL + '/images/courtesy_point_logo.png' }
 ];
 
+// Points a question is worth: its number (Q1 = 1 pt ... Q10 = 10 pts).
+// Add a `points:` field to a question to override this.
+export const getQuestionPoints = (question) => question.points ?? question.id;
+
+export const formatPoints = (points) => `${points} ${points === 1 ? 'pt' : 'pts'}`;
+
 export const questions = {
-  "ano_sa_tagalog_ang": [
-    { 
-      id: 1, 
-      question: 'Ano sa tagalog ang "Science"?', 
-      answer: 'Agham' 
-    },
-    { id: 2, 
-      question: 'Ano sa tagalog ito?', 
-      answer: 'Kwago',
-      image: process.env.PUBLIC_URL + '/images/owl.webp'
-    },
-    { id: 3, question: 'Ano sa tagalog ito?', answer: 'Dikya', image: process.env.PUBLIC_URL + '/images/jellyfish.jpg' },
-    { id: 4, question: 'Ano sa tagalog ang "Environment"?', answer: 'Kapaligiran' },
-    { id: 5, question: 'Ano sa tagalog ang "Shell"?', answer: 'Kabibe' },
-    { id: 6, question: 'Ano sa tagalog ang hayop na kumagat sa superhero na ito?', answer: 'Gagamba', image: process.env.PUBLIC_URL + '/images/spiderman.jpg' },
-    { id: 7, question: 'Ano sa tagalog ang "Jackfruit"?', answer: 'Lanka' },
-    { id: 8, question: 'Ano sa tagalog ang "Bitter Gourd"?', answer: 'Ampalaya' },
-    { id: 9, question: 'Ano sa tagalog ito?', answer: 'Labanos', image: process.env.PUBLIC_URL + '/images/labanos.jpg' },
-    { id: 10, question: 'Ano sa tagalog ang "String Beans"?', answer: 'Sitaw' }
+  "1": [
+    { id: 1, question: 'What is the name of the small green Jedi Master who trained Luke Skywalker on Dagobah?', answer: 'Yoda', image: process.env.PUBLIC_URL + '/images/yoda.png' },
+    { id: 2, question: 'Who famously says "I am your father" to Luke Skywalker?', answer: 'Darth Vader', image: process.env.PUBLIC_URL + '/images/darth_vader.jpg' },
+    { id: 3, question: 'What is the name of Han Solo\'s ship?', answer: 'The Millennium Falcon', image: process.env.PUBLIC_URL + '/images/millenium_falcon.webp' },
+    { id: 4, question: 'What is the name of the small orange-and-white rolling droid who helps Rey in The Force Awakens?', answer: 'BB-8', image: process.env.PUBLIC_URL + '/images/bb8.webp' },
+    { id: 5, question: 'What is the name of the desert planet where Luke Skywalker grew up?', answer: 'Tatooine', image: process.env.PUBLIC_URL + '/images/tatooine.webp' },
+    { id: 6, question: 'What color is Mace Windu\'s lightsaber, which is unique among the Jedi?', answer: 'Purple' },
+    { id: 7, question: 'Which bounty hunter delivers Han Solo, frozen in carbonite, to Jabba the Hutt?', answer: 'Boba Fett' },
+    { id: 8, question: 'Which Rebel Alliance admiral famously shouts "It\'s a trap!" at the Battle of Endor?', answer: 'Admiral Ackbar' },
+    { id: 9, question: 'Who was Obi-Wan Kenobi\'s Jedi Master, killed by Darth Maul on Naboo?', answer: 'Qui-Gon Jinn' },
+    { id: 10, question: 'What is the name of the volcanic planet where Anakin and Obi-Wan fight in Revenge of the Sith?', answer: 'Mustafar' }
   ],
 
-  "kasaysayan": [
-    { id: 1, question: 'Sino ang pambansang bayani ng Pilipinas?', answer: 'Dr. Jose Rizal' },
-    { id: 2, question: 'Anong taon ipinahayag ng Pilipinas ang kalayaan mula sa Espanya?', answer: '1898' },
-    { id: 3, question: 'Saan unang ipinahayag ang kalayaan ng Pilipinas?', answer: 'Kawit, Cavite' },
-    { id: 4, question: 'Ano ang ibig sabihin ng “K.K.K.”?', answer: 'Kataastaasan, Kagalanggalangang Katipunan ng mga Anak ng Bayan' },
-    { id: 5, question: 'Sino ang unang pangulo ng Pilipinas?', answer: 'Emilio Aguinaldo' },
-    { id: 6, question: 'Ilang taon tumagal ang panahon ng kastila?', answer: '300 taon' },
-    { id: 7, question: 'Sino ang kilala bilang “Utak ng Rebolusyon”?', answer: 'Apolinario Mabini' },
-    { id: 8, question: 'Ano ang pinakamatandang lungsod sa Pilipinas?', answer: 'Lungsod ng Cebu' },
-    { id: 9, question: 'Ano ang pamagat ng Pambansang Awit ng Pilipinas?', answer: 'Lupang Hinirang' },
-    { id: 10, question: 'Kailan namatay si Jose Rizal?', answer: 'Disyembre 30, 1896' }
+  "2": [
+    { id: 1, question: 'Which reindeer has a glowing red nose that guides Santa\'s sleigh?', answer: 'Rudolph', image: process.env.PUBLIC_URL + '/images/rudolph.webp' },
+    { id: 2, question: 'In Home Alone, what is the name of the boy who is accidentally left behind by his family?', answer: 'Kevin McCallister', image: process.env.PUBLIC_URL + '/images/home_alone.jpg'},
+    { id: 3, question: 'What color is the Grinch, who tries to steal Christmas from Whoville?', answer: 'Green' },
+    { id: 4, question: 'Which Mariah Carey song, released in 1994, returns to the top of the charts every December?', answer: 'All I Want for Christmas Is You', image: process.env.PUBLIC_URL + '/images/mariah.png'},
+    { id: 5, question: 'Ano ang titolo ng sikat na christmas song ni Ryan Cayabyab?', answer: 'Kumukutikutitap' },
+    { id: 6, question: 'Sino ang kumanta ng "Himig ng Pasko"?', answer: 'APO Hiking Society' },
+    { id: 7, question: 'Anong istasyon ng telebisyon ang naglabas ng christmas song na \'Star ng Pasko\'', answer: 'ABS-CBN' },
+    { id: 8, question: 'In the movie Elf, what is the name of the human raised by elves, played by Will Ferrell?', answer: 'Buddy' },
+    { id: 9, question: 'In The Nightmare Before Christmas, who is the Pumpkin King of Halloween Town?', answer: 'Jack Skellington' },
+    { id: 10, question: 'Anong sikat na pinoy christmas song ang may original na lyrics na Cebuano?', answer: 'Ang Pasko ay Sumapit (Kasadya Ning Taknaa)' }
   ],
 
-  "heograpiya": [
-    { id: 1, question: 'Ano ang pinakamataas na bundok sa Pilipinas?', answer: 'Apo' },
-    { id: 2, question: 'Ano ang lungsod na malapit dito?', answer: 'Legazpi', image: process.env.PUBLIC_URL + '/images/mayon.jpg'},
-    { id: 3, question: 'Ano ang kabisera ng probinsyang ito?', answer: 'Puerto Princesa', image: process.env.PUBLIC_URL + '/images/palawan.png' },
-    { id: 4, question: 'Ano ang kabisera ng Negros Occidental?', answer: 'Bacolod', image: process.env.PUBLIC_URL + '/images/negros_occidental.png' },
-    { id: 5, question: 'Saan ipinanganak si Jose Rizal?', answer: 'Calamba, Laguna' },
-    { id: 6, question: 'Ilang pulo ang bumubuo sa Pilipinas?', answer: '7,107 o 7,641' },
-    { id: 7, question: 'Ano ang tawag na hagdang-hagdang palayan sa Ifugao na kinikilala bilang UNESCO World Heritage Site?', answer: 'Banaue Rice Terraces', image: process.env.PUBLIC_URL + '/images/banaue.jpeg' },
-    { id: 8, question: 'Saan ito makikita?', answer: 'Chocolate Hills, Bohol', image: process.env.PUBLIC_URL + '/images/choco.jpeg'},
-    { id: 9, question: 'Aling pangkat ng mga isla sa pinakahilagang bahagi ng bansa ang kilala sa mga bahay na bato at malalakas na bagyo?', answer: 'Batanes', image: process.env.PUBLIC_URL + '/images/batanes.jpg' },
-    { id: 10, question: 'Ano ang sikat na isla ang may pinong puting buhangin na matatagpuan sa lalawigan ng Aklan?', answer: 'Boracay' }
+  "5": [
+    { id: 1, question: 'Sino ang nanalong \'Best in Costume (Male)\' noong 2025?', answer: 'Mike Once'},
+    { id: 2, question: 'Sinu sino sa Courtesy Point ang umuuwi sa Cavite?', answer: 'Dindo, Blue, Anna'},
+    { id: 3, question: 'Sino ang unang empleyado ng Courtesy Point maliban sa founder/president?', answer: 'Omar Olorosisimo' },
+    { id: 4, question: 'Sino sa Courtesy Point ang nagchampion sa Bahay Turo Pickleball Tournament?', answer: 'Alvin Ballesteros' },
+    { id: 5, question: 'Dati, ang pinakamaliit sa CPTI ay si Janine. Ngayon, sino na? Ano ang height nya?', answer: 'Anna (5\'0\")'},
+    { id: 6, question: 'Ano ang mga pangalan ng tatlong aso ng president?', answer: 'Franky, Lilou, at Hugo'},
+    { id: 7, question: 'Sino ang paboritong NBA player ni Claro?', answer: 'Lebron James' },
+    { id: 8, question: 'Taga saang probinsya ang nanalo ng \'Best in Costume 2025 (Female)\'?', answer: 'Capiz'},
+    { id: 9, question: 'Sinong anime character ang ka-birthday ni Erik?', answer: 'Naruto'},
+    { id: 10, question: 'Arlan', answer: 'Arlan' }
   ],
 
-  "pop_culture": [
-    { id: 1, question: 'Sino ang unang Pilipinong nanalo sa Miss Universe?', answer: 'Gloria Diaz (1969)', image: process.env.PUBLIC_URL + '/images/gloria.jpg' },
-    { id: 2, question: 'Sino ang asawa nito?', answer: 'Jinkee Pacquiao', image: process.env.PUBLIC_URL + '/images/manny.jpg'},
-    { id: 3, question: 'Ano ang ibig sabihin ng DPWH?', answer: 'Department of Public Works and Highways' },
-    { id: 4, question: 'Ano ang tawag sa street food na ito?', answer: 'Betamax', image: process.env.PUBLIC_URL + '/images/betamax.jpg' },
-    { id: 5, question: 'Ano ang pinakamatagal nang tumatakbong noontime show sa Pilipinas?', answer: 'Eat Bulaga!' },
-    { id: 6, question: 'Saang bansa kasalukuyang nakakulong ang dating pangulong Rodrigo Duterte?', answer: 'Netherlands' },
-    { id: 7, question: 'Ano ang pangalan ng computer virus na kumalat sa pamamagitan ng email na ginawa ng isang estudyante mula sa Maynila noong taong 2000?', answer: 'I Love You Virus' },
-    { id: 8, question: 'Sino ang gumanap bilang Cardo Dalisay sa FPJ’s Ang Probinsyano?', answer: 'Coco Martin' },
-    { id: 9, question: 'Anong sikat na palabas sa telebisyon noong 90s ang kilala sa kanilang Halloween special episode na nagpapakita ng mga reenactment ng kababalaghan at mga multo sa iba’t ibang bahagi ng bansa? Ang host nito ay si Noli de Castro.', answer: 'Magandang Gabi... Bayan', image: process.env.PUBLIC_URL + '/images/noli.avif' },
-    { id: 10, question: 'Sino ang unang nanalo ng gintong medalya para sa Pilipinas sa mga Palarong Olimpiko?', answer: 'Hidilyn Diaz' }
+  "3": [
+    { id: 1, question: 'Ano ang tawag sa hugis-bituing ilaw na isinasabit tuwing Pasko?', answer: 'Parol' },
+    { id: 2, question: 'Dekorasyong pamasko na nagpapakita ng pagsilang ni Hesus sa sabsaban, kasama sina Maria, Jose, mga pastol at ang Tatlong Hari. Ano ang tawag dito?', answer: 'Belen', image: process.env.PUBLIC_URL + '/images/belen.jpg' },
+    { id: 3, question: 'Kakaning kulay ube na niluluto sa kawayan at nilalagyan ng niyog, mantikilya at muscovado. Madalas itong binibili paglabas ng Simbang Gabi. Ano ang tawag dito?', answer: 'Puto bumbong', image: process.env.PUBLIC_URL + '/images/puto_bumbong.jpg' },
+    { id: 4, question: 'Tuwing araw ng Pasko, namamasko ang mga inaanak sa kanilang mga magulang sa binyag. Ano ang tawag sa mga magulang sa binyag?', answer: 'Ninong at Ninang' },
+    { id: 5, question: 'Anong bahagi ng Metro Manila ang pinapailawan ang mga gusali ng ganito kapag pasko?', answer: 'Rockwell', image: process.env.PUBLIC_URL + '/images/rockwell.webp' },
+    { id: 6, question: 'Ano ang tawag sa salu-salo ng pamilya tuwing bisperas ng Pasko?', answer: 'Noche Buena' },
+    { id: 7, question: 'Sa anong petsa nagsisimula ang simbang gabi?', answer: 'December 16' },
+    { id: 8, question: 'Tinatawag ding "Misa de Gallo" ang Simbang Gabi. Ano ang ibig sabihin ng "Misa de Gallo"?', answer: 'Rooster\'s Mass' },
+    { id: 9, question: 'Ano ang tawag sa pagsasadula tuwing bisperas ng Pasko kung saan naghahanap sina Jose at Maria ng matutuluyan?', answer: 'Panunuluyan' },
+    { id: 10, question: 'Ang queso de bola ay kilala sa ibang bansa bilang “Edam.” Saang bansa ito nagmula?', answer: 'Netherlands' }
   ],
 
-  "tradisyon_pamahiin": [
-    { id: 1, question: 'Ano ang bersyong Pilipino ng bampira na sumisipsip ng dugo gamit ang mahaba nitong dila?', answer: 'Aswang' },
-    { id: 2, question: 'Ano ang sinasabi ng mga Pilipino kapag dadaan sa lugar na pinaniniwalaang tinitirhan ng mga dwende?', answer: 'Tabi tabi po' },
-    { id: 3, question: 'Maliban sa daliri, anong bahagi ng katawan ang madalas gamitin ng mga Pilipino sa pagtuturo ng isang bagay?', answer: 'Bibig o Nguso' },
-    { id: 4, question: 'Ano ang kaugalian ng mga Pilipino bilang pagpapakita ng paggalang sa nakatatanda sa pamamagitan ng pagdampi ng kamay sa noo?', answer: 'Mano po', image: process.env.PUBLIC_URL + '/images/manopo.jpg' },
-    { id: 5, question: 'Ano ang tawag sa tradisyunal na panliligaw kung saan ang lalaki ay kumakanta sa labas ng bahay ng babae?', answer: 'Harana', image: process.env.PUBLIC_URL + '/images/harana.webp' },
-    { id: 6, question: 'Ano ang pamahiin kapag nalaglag ang kubyertos habang kumakain?', answer: 'May darating na bisita' },
-    { id: 7, question: 'Ano ang tradisyunal na sayaw ng mga Pilipino na gumagamit ng mga kawayan?', answer: 'Tinikling', image: process.env.PUBLIC_URL + '/images/tinikling.jpg' },
-    { id: 8, question: 'Ano ang pamahiin kapag umuulan habang maliwanag ang araw?', answer: 'May kinakasal na tikbalang' },
-    { id: 9, question: 'Ano ang taunang tradisyong Pilipino sa Quiapo, Maynila kung saan milyun-milyong deboto ang nakikilahok sa prusisyon bilang pagpapakita ng pananampalataya?', answer: 'Pista ng Itim na Nazareno (Black Nazarene) o Translacion', image: process.env.PUBLIC_URL + '/images/black_nazarene.jpg' },
-    { id: 10, question: 'Anong pista sa Baguio City ang ipinagdiriwang upang ipakita ang ganda ng mga bulaklak?', answer: 'Panagbenga Festival', image: process.env.PUBLIC_URL + '/images/panagbenga.png' }
+  "4": [
+    { id: 1, question: 'Ano ang tawag sa love team nina Alden Richards at Maine Mendoza na sumikat noong 2015?', answer: 'AlDub' },
+    { id: 2, question: 'Anong relihiyosong grupo ang nagmamay-ari ng arenang ito?', answer: 'Iglesia ni Cristo', image: process.env.PUBLIC_URL + '/images/philippine_arena.jpg' },
+    { id: 3, question: 'Saang sikat na kolehiyo nagaaral si Rene Baterbonia nung siya ay nasawi nitong Hunyo 2026? Clue: ito din ang kolehiyo ng Asst. Managing Director ng CPTI.', answer: 'Ateneo de Manila University', image: process.env.PUBLIC_URL + '/images/baterbonia.jpeg' },
+    { id: 4, question: 'Sinong mga Disney princesses ang binigyang boses ni Lea Salonga?', answer: 'Princess Jasmine at Mulan', image: process.env.PUBLIC_URL + '/images/lea_salonga.jpg' },
+    { id: 5, question: 'Anong ang highest grossing Filipino film of all time? Clue: ang setting nito ay sa Canada.', answer: 'Hello, Love, Again starring Kathryn Bernardo and Alden Richards'},
+    { id: 6, question: 'Ano ang unang WTA tour ang napanalunan ni Alex Eala?', answer: '2026 Washington Open' },
+    { id: 7, question: 'Sinong host ang nagkamali sa pag-anunsyo noong nanalo si Pia Wurtzbach ng Miss Universe noong 2015?', answer: 'Steve Harvey', image: process.env.PUBLIC_URL + '/images/pia_wurtzbach.avif' },
+    { id: 8, question: 'Alin sa mga bansa na ito ang WALANG Jollibee: Guam, UK, Kuwait, Bahrain, Thailand?', answer: 'Thailand' },
+    { id: 9, question: 'Ilang gintong medalya ang napanalunan ni Carlos Yulo sa Paris 2024 Olympics? Para sa anong events?', answer: '2 (floor exercise at vault)' },
+    { id: 10, question: 'Sinong Pilipinong direktor ang nanalo ng Best Director sa Cannes Film Festival noong 2009 para sa pelikulang Kinatay?', answer: 'Brillante Mendoza' }
   ]
 };
 
